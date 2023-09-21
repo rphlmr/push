@@ -14,8 +14,8 @@
       "types": "./types/index.d.ts"
     },
     "./worker": {
-      "default": "./lib/worker/index.js",
-      "types": "./types/worker/index.d.ts"
+      "default": "./lib/worker.js",
+      "types": "./types/worker.d.ts"
     }
   },
   "files": [
@@ -27,7 +27,8 @@
     "clean": "rimraf lib types",
     "copy": "",
     "format": "prettier --write ./src",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postinstall": "npm run build"
   },
   "peerDependencies": {
     "@remix-pwa/sw": "^1.0.0 || ^2.1.4",
